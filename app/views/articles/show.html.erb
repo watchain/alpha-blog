@@ -1,0 +1,19 @@
+<h1>Showing selected article</h1>
+<% if @article.errors.any? %>
+<h2>The following errors prevented the article from getting created</h2>
+<ul>
+  <% @article.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<p>
+  Title: <%= @article.title %>
+</p>
+
+<p>
+  Description: <%= @article.description %>
+</p>
+<%= link_to "Edit this article", edit_article_path(@article) %> |
+<%= link_to "Back to article listing", articles_path %>
